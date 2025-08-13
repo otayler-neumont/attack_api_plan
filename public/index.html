@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vuln Login 95</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.20/dist/98.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="desktop">
+        <div class="window auth-window" role="dialog" aria-labelledby="title">
+            <div class="title-bar">
+                <div class="title-bar-text" id="title">Vuln Login</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <form id="authForm" autocomplete="off">
+                    <div class="field-row-stacked">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="user@example.com" required />
+                    </div>
+                    <div class="field-row-stacked">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" placeholder="hunter2" required />
+                    </div>
+                    <div class="field-row">
+                        <input type="checkbox" id="showPw" />
+                        <label for="showPw">Show password</label>
+                    </div>
+                    <div class="field-row buttons">
+                        <button type="submit" id="loginBtn" class="button primary">Log In</button>
+                        <button type="button" id="registerBtn" class="button">Register</button>
+                        <button type="reset" class="button">Clear</button>
+                    </div>
+                </form>
+                <section class="response" aria-live="polite">
+                    <div class="status-bar">
+                        <p class="status-bar-field" id="statusField">Ready</p>
+                        <p class="status-bar-field right" id="statusCode"></p>
+                    </div>
+                    <pre id="responseBody" class="response-body"></pre>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

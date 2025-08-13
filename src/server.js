@@ -13,6 +13,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve static frontend (Windows 95-themed) from /public
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
 // Random logger (1 in 5 requests)
 app.use(randomLoggerMiddleware);
 

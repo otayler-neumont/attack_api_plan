@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "email": "testuser",
+    "passwordHash": "paoppaopqoankm2kzskhY2eFXH1ul3Rd"
+  },
+  {
+    "email": "testuser@test.com",
+    "passwordHash": "paoppaopqoan<paop*_kipBA0m4iHNZoSPU4tv6EQ"
+  }
+]
