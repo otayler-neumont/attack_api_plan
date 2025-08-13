@@ -25,6 +25,26 @@ app.get('/health', (req, res) => {
 
 app.use('/', authRouter);
 
+// Simple logs endpoint for Start Menu viewer
+app.get('/logs', async (req, res, next) => {
+  try {
+    const limitParam = Number.parseInt(String(req.query.limit || ''), 10);
+    const maxLines = Number.isFinite(limitParam) && limitParam > 0 ? limitParam : 200;
+    const logPath = path.join(__dirname, '..', 'logs', 'app.log');
+    let content = '';
+    try {
+      content = await fs.readFile(logPath, 'utf-8');
+    } catch (_e) {
+      content = '';
+    }
+    const lines = content.split(/\r?\n/);
+    const tail = lines.slice(-maxLines).join('\n');
+    res.type('text/plain').send(tail);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // Verbose error handler leaking stack traces
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {

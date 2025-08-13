@@ -6,5 +6,9 @@
   {
     "email": "testuser@test.com",
     "passwordHash": "paoppaopqoan<paop*_kipBA0m4iHNZoSPU4tv6EQ"
+  },
+  {
+    "email": "test@test.com",
+    "passwordHash": "EVhhldgY&'(iZhi5iZhi#XdbP9LMmyo29MunPzwqiQFw"
   }
 ]

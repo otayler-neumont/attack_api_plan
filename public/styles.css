@@ -8,18 +8,14 @@ body {
     margin: 0;
     background: #008080;
     /* Win95 teal */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     font-family: "MS Sans Serif", Tahoma, Verdana, sans-serif;
 }
 
 .desktop {
+    position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
 }
 
 .auth-window {
@@ -58,4 +54,73 @@ body {
 input[type="email"],
 input[type="password"] {
     width: 100%;
+}
+
+/* Utilities */
+.hidden {
+    display: none;
+}
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    box-shadow: inset 0 1px #000;
+}
+
+.start-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.start-menu {
+    position: absolute;
+    left: 6px;
+    bottom: 32px;
+    width: 220px;
+    z-index: 1000;
+}
+
+.start-menu .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.start .hidden {
+    display: none;
+}
+
+.tray {
+    padding-right: 8px;
+}
+
+/* Logs Window */
+.logs-window {
+    width: 520px;
+}
+
+/* Floating windows */
+.window-floating {
+    position: absolute;
+}
+
+.window-floating .title-bar {
+    cursor: move;
+}
+
+.window-floating.active {
+    z-index: 1001;
 }

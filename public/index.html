@@ -11,7 +11,8 @@
 
 <body>
     <div class="desktop">
-        <div class="window auth-window" role="dialog" aria-labelledby="title">
+        <div class="window auth-window window-floating" data-draggable="true" role="dialog" aria-labelledby="title"
+            style="top: 80px; left: 80px;">
             <div class="title-bar">
                 <div class="title-bar-text" id="title">Vuln Login</div>
                 <div class="title-bar-controls">
@@ -48,6 +49,54 @@
                     <pre id="responseBody" class="response-body"></pre>
                 </section>
             </div>
+        </div>
+    </div>
+
+    <!-- Taskbar / Start Menu -->
+    <div class="taskbar">
+        <div class="start">
+            <button id="startBtn" class="start-button">
+                <span>Start</span>
+            </button>
+            <div id="startMenu" class="start-menu hidden window">
+                <div class="title-bar">
+                    <div class="title-bar-text">Start</div>
+                </div>
+                <div class="window-body">
+                    <ul class="menu">
+                        <li><button id="openLogs">View Logs</button></li>
+                        <li><button id="playBoot">Play Boot Sound</button></li>
+                        <li><label class="mute"><input type="checkbox" id="muteSounds" /> Mute Sounds</label></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tray">
+            <span id="clock"></span>
+        </div>
+    </div>
+
+    <!-- Logs Window -->
+    <div id="logsWindow" class="window logs-window window-floating hidden" data-draggable="true" role="dialog"
+        aria-labelledby="logsTitle" style="top: 220px; left: 60px;">
+        <div class="title-bar">
+            <div class="title-bar-text" id="logsTitle">System Logs</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize" id="minLogs"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" id="closeLogs"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="field-row" style="justify-content: space-between; gap: 8px;">
+                <button id="refreshLogs">Refresh</button>
+                <select id="logCount">
+                    <option value="100">Last 100</option>
+                    <option value="200" selected>Last 200</option>
+                    <option value="500">Last 500</option>
+                </select>
+            </div>
+            <pre id="logsContent" class="response-body" style="height: 220px;"></pre>
         </div>
     </div>
 
