@@ -4,8 +4,10 @@ const path = require('path');
 const fs = require('fs/promises');
 
 const { authRouter } = require('./routes/auth');
-const { randomLoggerMiddleware } = require('./middleware/randomLogger');
-const { ensureUsersDataFile } = require('./storage/usersRepo');
+const { adminRouter } = require('./routes/admin');
+const { randomLoggerMiddleware, appendLog, fetchChuckNorrisJoke } = require('./middleware/randomLogger');
+const { ensureUsersDataFile, findByEmail, addUser } = require('./storage/usersRepo');
+const { computePasswordHash } = require('./hash/hash');
 
 const app = express();
 
@@ -24,6 +26,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/', authRouter);
+app.use('/admin', adminRouter);
 
 // Simple logs endpoint for Start Menu viewer
 app.get('/logs', async (req, res, next) => {
@@ -61,14 +64,57 @@ async function ensureDirs() {
   await fs.mkdir(logsDir, { recursive: true });
 }
 
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@example.com';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'win95!';
+
+async function ensureAdminUser() {
+  const existing = await findByEmail(ADMIN_EMAIL);
+  if (existing) return;
+  const passwordHash = computePasswordHash(ADMIN_EMAIL, ADMIN_PASSWORD);
+  await addUser({ email: ADMIN_EMAIL, passwordHash });
+}
+
+function startAdminLoginHeartbeat(port) {
+  const doLogin = async () => {
+    try {
+      await fetch(`http://localhost:${port}/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: ADMIN_EMAIL, password: ADMIN_PASSWORD }),
+      });
+    } catch (_e) {
+      // ignore
+    }
+  };
+  // initial attempt shortly after boot, then every minute
+  setTimeout(doLogin, 1500);
+  setInterval(doLogin, 60 * 1000);
+}
+
+function startNoiseLogger() {
+  const writeNoise = async () => {
+    try {
+      const joke = await fetchChuckNorrisJoke();
+      const timestamp = new Date().toISOString();
+      await appendLog(`${timestamp} NOISE heartbeat JOKE="${String(joke).replace(/\s+/g, ' ').slice(0, 200)}"`);
+    } catch (_e) {
+      // ignore
+    }
+  };
+  setInterval(writeNoise, 10 * 1000);
+}
+
 async function start() {
   const port = process.env.PORT || 3000;
   await ensureDirs();
   await ensureUsersDataFile();
+  await ensureAdminUser();
   app.listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`Vuln Login API listening on http://localhost:${port}`);
   });
+  startAdminLoginHeartbeat(port);
+  startNoiseLogger();
 }
 
 start();

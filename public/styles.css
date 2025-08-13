@@ -48,6 +48,7 @@ body {
     max-height: 160px;
     overflow: auto;
     white-space: pre-wrap;
+    color: #000;
 }
 
 /* Input sizing harmony */
@@ -124,3 +125,5 @@ input[type="password"] {
 .window-floating.active {
     z-index: 1001;
 }
+
+/* Admin window width adjustments are inline via style; no extra rules needed */

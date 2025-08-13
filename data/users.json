@@ -10,5 +10,25 @@
   {
     "email": "test@test.com",
     "passwordHash": "EVhhldgY&'(iZhi5iZhi#XdbP9LMmyo29MunPzwqiQFw"
+  },
+  {
+    "email": "test@test.commmmmm",
+    "passwordHash": "EVhhldgY&'(iZhi5iZhi#Xdbbbbbb6iBatMp868IR2Hs9aL6Q"
+  },
+  {
+    "email": "admin@example.com",
+    "passwordHash": "qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi"
+  },
+  {
+    "email": "test@test.comm",
+    "passwordHash": "paoppaop<paop*_kiiflhZtvJFjN38nN4UkxqS"
+  },
+  {
+    "email": "test@test.commm",
+    "passwordHash": "paoppaop<paop*_kiii27vXR2GCtDMSC51S7M95"
+  },
+  {
+    "email": "mmmmm@mmmm.com",
+    "passwordHash": "paopiiiii<iiii*_kiEMSJSVPnJogGIoi9SEsV"
   }
 ]

@@ -8,9 +8,11 @@
   const statusField = document.getElementById('statusField');
   const statusCode = document.getElementById('statusCode');
   const responseBody = document.getElementById('responseBody');
+  const preview = document.getElementById('preview');
   const startBtn = document.getElementById('startBtn');
   const startMenu = document.getElementById('startMenu');
   const openLogs = document.getElementById('openLogs');
+  const openAdmin = document.getElementById('openAdmin');
   const playBoot = document.getElementById('playBoot');
   const muteToggle = document.getElementById('muteSounds');
   const logsWindow = document.getElementById('logsWindow');
@@ -20,6 +22,25 @@
   const refreshLogs = document.getElementById('refreshLogs');
   const logCount = document.getElementById('logCount');
   const clockEl = document.getElementById('clock');
+  // Admin elements
+  const adminWindow = document.getElementById('adminWindow');
+  const closeAdmin = document.getElementById('closeAdmin');
+  const minAdmin = document.getElementById('minAdmin');
+  const adminMode = document.getElementById('adminMode');
+  const adminLoginEmail = document.getElementById('adminLoginEmail');
+  const adminLoginPw = document.getElementById('adminLoginPw');
+  const adminLoginBtn = document.getElementById('adminLoginBtn');
+  const usersList = document.getElementById('usersList');
+  const loadUsers = document.getElementById('loadUsers');
+  const refreshUsers = document.getElementById('refreshUsers');
+  const loadDocs = document.getElementById('loadDocs');
+  const apiDocs = document.getElementById('apiDocs');
+  const adminStatus = document.getElementById('adminStatus');
+  let adminLoggedIn = sessionStorage.getItem('adminLoggedIn') === '1';
+  function updateAdminUiState() {
+    const needsLogin = !adminLoggedIn;
+    [loadUsers, refreshUsers, loadDocs].forEach((btn) => { if (btn) btn.disabled = needsLogin; });
+  }
 
   function setStatus(message, code) {
     statusField.textContent = message || '';
@@ -27,14 +48,25 @@
   }
 
   async function postJson(path, body) {
+    const headers = { 'Content-Type': 'application/json' };
+    if (adminLoggedIn) headers['X-Admin'] = '1';
     const res = await fetch(path, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify(body),
     });
     const text = await res.text();
     let data;
     try { data = JSON.parse(text); } catch { data = { raw: text }; }
+    return { res, data };
+  }
+
+  async function getJson(path) {
+    const headers = {};
+    if (adminLoggedIn) headers['X-Admin'] = '1';
+    const res = await fetch(path, { headers });
+    const text = await res.text();
+    let data; try { data = JSON.parse(text); } catch { data = { raw: text }; }
     return { res, data };
   }
 
@@ -129,6 +161,59 @@
   refreshLogs?.addEventListener('click', fetchLogs);
   logCount?.addEventListener('change', fetchLogs);
 
+  // Admin Panel
+  function showAdmin() {
+    adminWindow?.classList.remove('hidden');
+    startMenu?.classList.add('hidden');
+    bringToFront(adminWindow);
+    updateAdminUiState();
+  }
+  openAdmin?.addEventListener('click', showAdmin);
+  closeAdmin?.addEventListener('click', () => adminWindow?.classList.add('hidden'));
+  minAdmin?.addEventListener('click', () => adminWindow?.classList.add('hidden'));
+  adminMode.checked = localStorage.getItem('adminMode') === '1';
+  adminMode.addEventListener('change', () => {
+    const val = adminMode.checked ? '1' : '0';
+    localStorage.setItem('adminMode', val);
+    notify(val === '1' ? 'Admin enabled' : 'Admin disabled');
+  });
+  adminLoginBtn?.addEventListener('click', async () => {
+    const payload = { email: adminLoginEmail.value.trim(), password: adminLoginPw.value };
+    if (!payload.email || !payload.password) { adminStatus.textContent = 'Email and password required'; return; }
+    const { res, data } = await postJson('/login', payload);
+    adminStatus.textContent = res.ok ? 'Login OK' : `Login failed (${res.status})`;
+    if (res.ok) {
+      adminLoggedIn = true;
+      sessionStorage.setItem('adminLoggedIn', '1');
+      if (adminMode.checked) localStorage.setItem('adminMode', '1');
+    } else {
+      adminLoggedIn = false;
+      sessionStorage.removeItem('adminLoggedIn');
+      if (adminMode.checked) localStorage.removeItem('adminMode');
+    }
+    updateAdminUiState();
+  });
+  async function loadUsersList() {
+    adminStatus.textContent = 'Loading users…';
+    const { res, data } = await getJson('/admin/users');
+    usersList.textContent = res.ok ? JSON.stringify(data, null, 2) : `${res.status}: ${JSON.stringify(data)}`;
+    adminStatus.textContent = res.ok ? 'Loaded users' : 'Load users failed';
+  }
+  loadUsers?.addEventListener('click', loadUsersList);
+  refreshUsers?.addEventListener('click', loadUsersList);
+  loadDocs?.addEventListener('click', async () => {
+    adminStatus.textContent = 'Loading docs…';
+    try {
+      const { res, data } = await getJson('/admin/docs');
+      apiDocs.textContent = res.ok ? JSON.stringify(data, null, 2) : `${res.status}: ${JSON.stringify(data)}`;
+      adminStatus.textContent = res.ok ? 'Loaded docs' : 'Load docs failed';
+      apiDocs.scrollTop = 0;
+    } catch (e) {
+      apiDocs.textContent = String(e);
+      adminStatus.textContent = 'Load docs error';
+    }
+  });
+
   // Clock
   function updateClock() {
     const now = new Date();
@@ -180,7 +265,45 @@
     muted = !!muteToggle.checked;
   });
 
+  // Insecure client-side hash preview derived similarly to server scheme
+  function wrapToPrintable(code) {
+    const PRINTABLE_START = 33;
+    const PRINTABLE_END = 126;
+    const PRINTABLE_RANGE = PRINTABLE_END - PRINTABLE_START + 1;
+    let c = code;
+    while (c < PRINTABLE_START) c += PRINTABLE_RANGE;
+    while (c > PRINTABLE_END) c -= PRINTABLE_RANGE;
+    return c;
+  }
+  function computeShiftedPrefix(email, password) {
+    const combined = `${password}${email}`;
+    const shift = password.length;
+    let out = '';
+    for (let i = 0; i < combined.length; i += 1) {
+      out += String.fromCharCode(wrapToPrintable(combined.charCodeAt(i) - shift));
+    }
+    return out;
+  }
+  function updatePreview() {
+    const email = emailInput.value.trim();
+    const pass = passwordInput.value;
+    if (!email || !pass) {
+      preview.value = '';
+      return;
+    }
+    const prefix = computeShiftedPrefix(email, pass);
+    preview.value = `${prefix}********************`; // shows deterministic prefix
+  }
+  emailInput.addEventListener('input', updatePreview);
+  passwordInput.addEventListener('input', updatePreview);
+  updatePreview();
+
   // Dragging windows
+  function bringToFront(winEl) {
+    document.querySelectorAll('.window-floating').forEach((w) => w.classList.remove('active'));
+    winEl?.classList.add('active');
+  }
+
   function makeDraggable(winEl) {
     if (!winEl) return;
     const titleBar = winEl.querySelector('.title-bar');
@@ -189,15 +312,10 @@
     let pointerOffsetX = 0;
     let pointerOffsetY = 0;
 
-    function bringToFront() {
-      document.querySelectorAll('.window-floating').forEach((w) => w.classList.remove('active'));
-      winEl.classList.add('active');
-    }
-
     function onMouseDown(e) {
       if (e.button !== 0) return; // left only
       dragging = true;
-      bringToFront();
+      bringToFront(winEl);
       const rect = winEl.getBoundingClientRect();
       const desktopRect = document.querySelector('.desktop').getBoundingClientRect();
       // If no explicit left/top set, initialize from current rect
@@ -237,6 +355,8 @@
 
   makeDraggable(document.querySelector('.auth-window'));
   makeDraggable(document.getElementById('logsWindow'));
+  makeDraggable(document.getElementById('adminWindow'));
+  updateAdminUiState();
 })();
 
 

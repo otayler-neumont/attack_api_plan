@@ -13,3 +13,205 @@
 2025-08-13T20:55:13.435Z GET /logs?limit=200 FAKE_HASH=48c9e23da7db8b113fb8d8cc74655d62c645920ad702afcec93838ecfd8af79d JOKE="Chuck Norris once had an awkward moment. Just to see what it feels like."
 2025-08-13T20:55:14.550Z GET /logs?limit=200 FAKE_HASH=b6f7d13d349105f98fc42b78bad292d1b1d78a4a22852c86f8a92764217d82f9 JOKE="If Chuck Norris shaved off his beard, there would be no chin... just another fist"
 2025-08-13T20:55:58.741Z GET /logs?limit=200 FAKE_HASH=2be164a4433bcec591d174d04633d7d5e52d0e1bc1fad0c86f9911d4e4a859cb JOKE="What's the differance between Chuck Norris' penis and a beer tap? Nevermind, I'll just go get my own mug of beer."
+LOGIN email=test@test.com userFound=true hash=EVhhldgY&'(iZhi5iZhi#XdbP9LMmyo29MunPzwqiQFw ok=true
+2025-08-13T21:04:15.779Z POST /login FAKE_HASH=45630a74a4245dd09478959f0930f6fa9640f68bd233665e50d0d2906120d213 JOKE="For 'American Sniper', Bradley Cooper got acting and beard-wearing tips from Chuck Norris."
+2025-08-13T21:04:20.478Z GET /logs?limit=200 FAKE_HASH=914a40113b5ae60b93b3719e7ef02412d5b1de740e2138fd842ed920e312fca0 JOKE="Drugs score Chuck Norris."
+LOGIN email=test@test.commmmmm userFound=false
+REGISTER email=test@test.commmmmm hash=EVhhldgY&'(iZhi5iZhi#Xdbbbbbb6iBatMp868IR2Hs9aL6Q
+2025-08-13T21:18:59.168Z GET /logs?limit=200 FAKE_HASH=a86b7888034249584309cc303a2d80745fc1656ffb95df0420088d556fc45595 JOKE="We're taught Jesus died for the redemption of our sins: past, present and future. If Chuck Norris sins, we're totally screwed. We'll need a bus full of Jesuses, for something as minor as when Chuck No"
+2025-08-13T21:18:59.754Z GET /logs?limit=200 FAKE_HASH=389a09c34c55a24667bf4cf2a14870d10edeb65bd7531f68975749fa347ba103 JOKE="If Chuck Norris had signed on to be on NBC's A-Team, the team would have needed only one member."
+2025-08-13T21:21:18.770Z GET /admin/users FAKE_HASH=389ee9441b4090740bd72ce593111c7a418b79cdcae611b392d8bd765835c581 JOKE="Haiti once talked about Chuck Norris' momma, we all know what happened to Haiti."
+2025-08-13T21:21:35.218Z GET /favicon.ico FAKE_HASH=f9edefc5bc5a8c8d51442e2af4e55d7a913cdec6a0030072b4f3dd8c99f11f22 JOKE="A long time ago, in a galaxy far,far away.... Chuck Norris roundhouse kicked the shit out of somebody."
+LOGIN email=admin@example.com userFound=false
+2025-08-13T21:49:52.359Z GET /logs?limit=200 FAKE_HASH=95d10021f05d9cbf48e15dbdc1a85dd0861884d3ca05c8732407248838eca9f4 JOKE="Chuck Norris is not affected by the human condition."
+2025-08-13T21:49:59.325Z GET /logs?limit=200 FAKE_HASH=65e65c565a3de079569e302942daef53f51cb754a8cff13709dec70b26ff9703 JOKE="Chuck Norris is better than Billy Madison's shampoo and conditioner."
+2025-08-13T21:50:18.893Z GET /logs?limit=200 FAKE_HASH=eca20cb2e8743dc88350295ee6489e6d720178c0d2d309db106be17e3590580d JOKE="When Chuck Norris cuts it Footloose, God help anyone within a three-mile radius."
+2025-08-13T21:50:19.504Z GET /logs?limit=200 FAKE_HASH=2bacd00467de8b17c6f3493ea3cfec9436be1f3c97b1c2d39c731efefd23d610 JOKE="Chuck Norris can break iron with bubbles"
+2025-08-13T21:50:19.603Z GET /logs?limit=200 FAKE_HASH=60cfb7c7d8314719c4da7f917c2480175b77f9a8ba22f166d988c75bccf14620 JOKE="Chuck Norris doesn't need a gun he uses his farts to blow a hole in you"
+2025-08-13T21:50:31.043Z GET /logs?limit=200 FAKE_HASH=758795c7e3447600dfa3d9bb97c1943fa1382c1526da7d0f925380463a7605a4 JOKE="Crop circles are Chuck Norris' way of telling the world that sometimes corn needs to lie down."
+LOGIN email=admin@example.com userFound=false
+LOGIN email=admin@example.com userFound=false
+2025-08-13T21:51:23.455Z GET /logs?limit=200 FAKE_HASH=f9340ee34a8c6e4cba7398f4781cd5db252e62e88b8fec21dde7c9e4c34ee7fb JOKE="Life is what Chuck Norris makes it."
+LOGIN email=test@test.com userFound=true hash=EVhhldgY&'(iZhi5iZhi#XdbP9LMmyo29MunPzwqiQFw ok=false
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T21:54:58.966Z GET /favicon.ico FAKE_HASH=0c03a66b4f93a545316b18a39d29364e692254af6b6613c7ae60a3e4e4bfe304 JOKE="Although a big fan of meat, Chuck Norris has never eaten a tenderloin - nothing about Chuck is tender."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T21:58:31.494Z POST /login FAKE_HASH=e4a533a1cf7da288ed6dfa55a058a5a31a66da010010952b922fac1a54bafbf4 JOKE="Chuck Norris can roundhouse kick the air around him and it bleeds wind."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:02:42.587Z POST /login FAKE_HASH=bfe2c1e390e022e5ad79fee6ddd6881d6f90e87996c43517d6af414b281fc049 JOKE="Chuck Norris once dipped an elephant's nose in a pile of cocaine then rammed it up Ricarhd Gere's ass."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:02:47.601Z POST /login FAKE_HASH=05f3bf755158cd3dc35c7b46ab1ee3c63041d15274b8ae692e650a96218b4aa6 JOKE="Chuck Norris doesn't have an age - he has a half-life."
+LOGIN email=test@test.com userFound=true hash=EVhhldgY&'(iZhi5iZhi#XdbP9LMmyo29MunPzwqiQFw ok=false
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:04:31.456Z POST /login FAKE_HASH=e4e45d045ed252f1a11c3da83fec263732c5953ac2ce74fd8b1dcf55de2a0091 JOKE="Weed should be legal cause i smoke it and so does Chuck Norris"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:07:31.736Z POST /login FAKE_HASH=84d1ea9e4f14b394649e327f68a9d246c1e8b817f9cdbfa844372934f22f6603 JOKE="Chuck Norris cut off his own legs then walked it off"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:08:19.916Z POST /login FAKE_HASH=ccfde1c53924ee6c955fe37e489be348722b9cf0736a6ff2f726b767f91f067b JOKE="Chuck Norris receives mothers day cards for giving birth to twins: WAR AND PEACE!!!!"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:09:09.889Z GET /logs?limit=200 FAKE_HASH=8876a0a7c98cd3a9d395d0eee1a3ef81d2253018c8c1ae4dbe1f0297418122b5 JOKE="Chuck Norris easily won the Iditarod dog sled race by pulling a sled load of 16 dogs, 800 pounds of supplies and with a dead sperm whale chained behind it."
+2025-08-13T22:09:10.396Z GET /logs?limit=200 FAKE_HASH=a0958f0dd27f0309413aae0dc99ae93bff3e8dd3812ba5cbafb72a68d4bf10f1 JOKE="Chuck Norris has never had a heart attack, manly do to the fact that Chuck Norris's heart is not foolish enough to attack, Chuck Norris."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:09:31.387Z POST /login FAKE_HASH=75276f349fa3a987ee2492305d8e61d53b655e646059f3dd47d200ce1ec5b20d JOKE="Chuck Norris can revolve a wooden door"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:10:40.271Z GET /logs?limit=200 FAKE_HASH=fd1e240415638fabc850d55d8f9a227f24b044266fca71cd10fc98753686a088 JOKE="So it seems sleep has a cousin named death and Chuck Norris is sleeps Uncle which makes Chuck Norris Death's dad! Oh man i feel sorry for death's boyfriend!"
+2025-08-13T22:10:40.549Z GET /logs?limit=200 FAKE_HASH=b905a5dc0a1adf73904c623f48e5d03dbfe3be4a213001aa20f6123be7b0898f JOKE="Chuck Norris and Justin Bieber hang out in Minecraft... Justin: Ok, tell me... how did you find redstone at level 80 without any mods? Chuck: Don't you remember? Justin: Oh, right. I forgot. Chuck Nor"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:13:29.035Z NOISE heartbeat JOKE="Chuck Norris ejaculated into the ocean and created the Sperm Whale."
+2025-08-13T22:13:38.997Z NOISE heartbeat JOKE="Chuck Norris once won an arm wrestling match,with both hands tied behind his back"
+2025-08-13T22:13:48.983Z NOISE heartbeat JOKE="Little-known fact: Lionel Richie wrote 'Dancing On The Ceiling' about the time he attended a Chuck Norris party where he reversed the gravity at his house for the night."
+2025-08-13T22:13:58.964Z NOISE heartbeat JOKE="The odds of a Star Destroyer surviving a direct assault on Chuck Norris are approximately three thousand seven hundred and twenty to one."
+2025-08-13T22:14:09.002Z NOISE heartbeat JOKE="When Chuck Norris farts he dutch-ovens the world"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:14:18.998Z NOISE heartbeat JOKE="Chuck Norris always cut his birthday cake with a chainsaw."
+2025-08-13T22:14:28.958Z NOISE heartbeat JOKE="Chuck Norris can alphebetize his M&M's. Skittles too."
+2025-08-13T22:14:38.987Z NOISE heartbeat JOKE="Taco Bell quiere Chuck Norris"
+2025-08-13T22:14:48.986Z NOISE heartbeat JOKE="Chuck Norris can drive an aircraft carrier by himself."
+2025-08-13T22:14:58.963Z NOISE heartbeat JOKE="Chuck Norris invented the soccer ball by dehydrating a zebra."
+2025-08-13T22:15:08.962Z NOISE heartbeat JOKE="NASA ended the space shuttle program when they discovered it'd be easier and cheaper to have Chuck Norris launch astronauts into space."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:15:18.953Z NOISE heartbeat JOKE="When Chuck Norris is in the mood for seafood... he enjoys fresh caught Kracken!!!!"
+2025-08-13T22:15:28.997Z NOISE heartbeat JOKE="Chuck Norris and Mr T walked into a bar. The bar promptly exploded as no one place in the known universe can hold that level of awesome."
+2025-08-13T22:15:39.001Z NOISE heartbeat JOKE="Uncle Sam is Chuck Norris' nephew."
+2025-08-13T22:15:49.005Z NOISE heartbeat JOKE="Chuck Norris once knocked a woman out with his ejaculation."
+2025-08-13T22:15:59.069Z NOISE heartbeat JOKE="Chuck Norris invented Breeding so that he could Roundhouse Kick Newborns.... Twice"
+2025-08-13T22:16:08.634Z NOISE heartbeat JOKE="Chuck Norris never gets 'caught' in the crossfire. He revels in it."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:16:18.954Z NOISE heartbeat JOKE="The raisins in Kellogg's Raisin Bran are actually dehydrated Chuck Norris boogers."
+2025-08-13T22:16:19.005Z POST /login FAKE_HASH=2a96455339ecd7c8e7bc9e3f5bedb1f1d963900969f76ce6881ed46ef2d97bf4 JOKE="When the going gets tough, Chuck Norris."
+2025-08-13T22:16:29.005Z NOISE heartbeat JOKE="Michael Jackson developed the moonwalk by studying footage of Chuck Norris wiping his feet."
+2025-08-13T22:16:38.990Z NOISE heartbeat JOKE="Chuck Norris round-house kicked micheal jackson and he turned from black to white"
+2025-08-13T22:16:48.977Z NOISE heartbeat JOKE="Chuck Norris once punched a man so hard in his mouth that the only thing that came out of the man's penis for 3 weeks was teeth"
+2025-08-13T22:16:56.009Z GET /favicon.ico FAKE_HASH=e13617095a189cec2f6010df1a11e2e1b868361b32ead68a1bd4d24501f8f78d JOKE="Chuck Norris wipes his ass with notebook paper"
+2025-08-13T22:16:58.543Z NOISE heartbeat JOKE="Chuck Norris knows exactly how many roundhouse kicks to your ass that it takes to make a poignant hemorrhoidal bouquet for you...one!"
+2025-08-13T22:17:09.024Z NOISE heartbeat JOKE="Chuck Norris is so cool, every time his name is mentioned a man is cured of impotence."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:17:18.681Z NOISE heartbeat JOKE="Chuck Norris drinks his martini stirred, not shaken"
+2025-08-13T22:17:18.963Z POST /login FAKE_HASH=b1865a16e01fb298ffdd26f54e07bc9f3c9da869e2d072e2a642be3490415adb JOKE="Years ago, Chuck Norris was asked to become a member of the Beach Boys. Chuck declined but had he joined, they were going to change their name to the Beach Men."
+2025-08-13T22:17:29.006Z NOISE heartbeat JOKE="Chuck Norris invented smell-o-vision. But he only uses it to watch that scene in Basic Instinct."
+2025-08-13T22:17:39.059Z NOISE heartbeat JOKE="Chuck Norris once downloaded the entire Internet"
+LOGIN email=test@test.com userFound=true hash=EVhhldgY&'(iZhi5iZhi#XdbP9LMmyo29MunPzwqiQFw ok=false
+2025-08-13T22:17:49.046Z NOISE heartbeat JOKE="When Chuck Norris was denied a Bacon McMuffin at McDonalds because it was 10:35, he roundhouse kicked the store so hard it became a KFC."
+2025-08-13T22:17:58.670Z NOISE heartbeat JOKE="The Most Interesting Man in the world recently met Chuck Norris. He said "meeting Mr. Norris was facinating"."
+2025-08-13T22:18:09.039Z NOISE heartbeat JOKE="Chuck Norris uses the HOV lane by himself."
+REGISTER email=test@test.comm hash=paoppaop<paop*_kiiflhZtvJFjN38nN4UkxqS
+2025-08-13T22:18:16.819Z POST /register FAKE_HASH=a28be3fa912e3937ac91d0007a8de783c778ff6daf0c285cf9f5d476d2671f34 JOKE="Chuck Norris solved the illegal immigration problem. He replaced every "U.S. Border" sign with "Norris Ranch"."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:18:18.557Z NOISE heartbeat JOKE="Ozzy Osbourne bites the heads off of bats. Chuck Norris bites the heads off of Siberian Tigers."
+2025-08-13T22:18:29.084Z NOISE heartbeat JOKE="When a person goes to a plastic surgery clinic, the front desk doesn't hire a surgeon. They hire Chuck Norris."
+2025-08-13T22:18:39.017Z NOISE heartbeat JOKE="The historical earthquakes in Japan were caused by Chuck Norris digging up what we know as the Mariana Trench."
+2025-08-13T22:18:48.991Z NOISE heartbeat JOKE="Chuck Norris can watch videos on Instagram!"
+2025-08-13T22:18:59.089Z NOISE heartbeat JOKE="By the time you see Chuck Norris in your rearview mirror, he's already kicked you in the face and is 10 car lengths ahead of you."
+2025-08-13T22:19:09.029Z NOISE heartbeat JOKE="Documentaries about Chuck Norris' life can be found in video libraries in the horror section."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+REGISTER email=test@test.commm hash=paoppaop<paop*_kiii27vXR2GCtDMSC51S7M95
+2025-08-13T22:19:19.062Z NOISE heartbeat JOKE="Chuck Norris invented the woman because he got tired of men."
+2025-08-13T22:19:19.062Z POST /login FAKE_HASH=30a5ec4ef6e4ff78511b82250442509502242aba6a9bf8c5ac8bbbf4f3f56b30 JOKE="Chuck Norris pasteurizes milk by drinking it"
+2025-08-13T22:19:28.988Z NOISE heartbeat JOKE="Chuck Norris knows how to get to Seasame Street."
+2025-08-13T22:19:38.995Z NOISE heartbeat JOKE="Chuck Norris sneezed twice--Hiroshima and Nagasaki were no more."
+REGISTER email=mmmmm@mmmm.com hash=paopiiiii<iiii*_kiEMSJSVPnJogGIoi9SEsV
+2025-08-13T22:19:47.619Z POST /register FAKE_HASH=24aa1c5dc4f0fa4fdc9c77a13ba7f7076882f9aeb927305fe9f7923353a6787c JOKE="If paper beats rock, rock beats scissors, and scissors beats paper, what beats all 3 at the same time? Answer: Chuck Norris."
+2025-08-13T22:19:48.766Z GET /logs?limit=200 FAKE_HASH=c34f50bcc2d2a5fc87d4cd279ddcd60e773e50b6fbdd3c4e8e17a77f629087c8 JOKE="Never look a gift Chuck Norris in the mouth, because he will bite your damn eyes off."
+2025-08-13T22:19:49.058Z NOISE heartbeat JOKE="Chuck Norris' chi alone disrupts telecommunication signals around the globe."
+2025-08-13T22:19:59.095Z NOISE heartbeat JOKE="When Chuck Norris air-guitars, you can actually hear the real sound of a Gibson Les Paul coming from his air guitar."
+2025-08-13T22:20:08.988Z NOISE heartbeat JOKE="Chuck Norris' remote has a bayonet."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:20:19.064Z NOISE heartbeat JOKE="Chuck Norris paints his house once a year with a human head."
+2025-08-13T22:20:29.100Z NOISE heartbeat JOKE="On the morning of July 30, 1975, Jimmy Hoffa scratched Chuck Norris' truck. Hoffa vanished later that day. Let this be a lesson for all."
+2025-08-13T22:20:39.029Z NOISE heartbeat JOKE="Chuck Norris did not look at Tupac or Biggie. He merely looked at them!"
+2025-08-13T22:20:48.975Z NOISE heartbeat JOKE="Chuck Norris can fly on an airplane to Maine from Hawaii in 30 seconds. he just has to tell the pilot to move over..."
+2025-08-13T22:20:59.035Z NOISE heartbeat JOKE="Chuck Norris' father is Chuck Norris, his mother is America, his brother is freedom and his other brother is Sam... Sam Norris. Chuck Norris loves his family dearly, except for Sam, that is why Sam no"
+2025-08-13T22:21:09.009Z NOISE heartbeat JOKE="One night Chuck Norris had Chili for dinner. The very next day the Big Bang happened."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:21:19.009Z NOISE heartbeat JOKE="Chuck Norris once ace the test, just by staring at the numbers."
+2025-08-13T22:21:29.059Z NOISE heartbeat JOKE="Most men's sperm look like tadpoles. Chuck Norris's sperm look like motherfucking mudskippers."
+2025-08-13T22:21:39.010Z NOISE heartbeat JOKE="Chuck Norris has seen it all, and done it all, so many times that he has long ago lost count."
+2025-08-13T22:21:49.009Z NOISE heartbeat JOKE="While teaching a CPR course, Chuck Norris actually brought the practice dummy to life"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:22:05.225Z POST /login FAKE_HASH=aecbff71111d155bc8d30231d067e7f732e88f800b36f45f82680b90231ad345 JOKE="Chuck Norris installed Skynet on his iPod."
+2025-08-13T22:22:13.681Z NOISE heartbeat JOKE="Chuck Norris recently received a Nobel Prize for his groundbreaking role in "Firewalker"."
+2025-08-13T22:22:23.658Z NOISE heartbeat JOKE="If Chuck Norris coughs on you, you owe him 50 bucks."
+2025-08-13T22:22:33.686Z NOISE heartbeat JOKE="Chuck Norris is Mysterion."
+2025-08-13T22:22:43.651Z NOISE heartbeat JOKE="That's not Chuck Norris doing push-ups, That's Chuck Norris moving the earth out of the path of a deadly asteroid."
+2025-08-13T22:22:53.632Z NOISE heartbeat JOKE="Chuck Norris once tried to wear glasses. The result was him seeing around the world to the point where he was looking at the back of his own head."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:23:03.300Z NOISE heartbeat JOKE="Chuck Norris once killed a man with a roundhouse kick to someone else's face."
+2025-08-13T22:23:13.755Z NOISE heartbeat JOKE="Chuck Norris once shot a man in Reno just to watch him die."
+2025-08-13T22:23:23.689Z NOISE heartbeat JOKE="Chuck Norris jizzes lightning bolts."
+2025-08-13T22:23:33.287Z NOISE heartbeat JOKE="Chuck Norris glows black in the dark"
+2025-08-13T22:23:43.703Z NOISE heartbeat JOKE="Jesus wears a bracelet that says wwcnd (what would Chuck Norris do?)"
+2025-08-13T22:23:53.694Z NOISE heartbeat JOKE="Eskimos club baby seals to death for their fur. Chuck Norris clubs Eskimos for their teeth. That's why you never see an Eskimo with teeth grinning."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:24:03.706Z NOISE heartbeat JOKE="The munchies get Chuck Norris."
+2025-08-13T22:24:13.765Z NOISE heartbeat JOKE="Chuck Norris can sharpen James Blunt."
+2025-08-13T22:24:23.666Z NOISE heartbeat JOKE="Chuck Norris completed COD Black opps on a broken guitar hero guitar"
+2025-08-13T22:24:33.661Z NOISE heartbeat JOKE="A man was freaking out and told his shrink he had seen deamons in the dark. Turns out he had just had the misfortune of running into Chuck Norris on a dark street corner."
+2025-08-13T22:24:43.694Z NOISE heartbeat JOKE="Chuck Norris killed Biggie and Pac"
+2025-08-13T22:24:53.699Z NOISE heartbeat JOKE="On his days off Chuck Norris actually gets along with people quite well. Chuck Norris never takes a day off."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:25:03.666Z NOISE heartbeat JOKE="Chuck Norris is so old-school, he plays a coal-fired guitar."
+2025-08-13T22:25:13.646Z NOISE heartbeat JOKE="Chuck Norris once read the entire Merriam-Webster dictionary backwards in pig-Latin, while roundhouse kicking 30 ninjas."
+2025-08-13T22:25:23.711Z NOISE heartbeat JOKE="Chuck Norris does not play dice... : Einstein"
+2025-08-13T22:25:33.694Z NOISE heartbeat JOKE="Chuck Norris' neighbor asked if he could help fix his taps. Chuck fixed his taps, all right - then tapped his wife."
+2025-08-13T22:25:43.300Z NOISE heartbeat JOKE="Thi site has the worst Chuck Norris jokes out there. I mean really people. No one even puts any thought into them. They are pathetic"
+2025-08-13T22:25:53.296Z NOISE heartbeat JOKE="Chuck Norris' beard survives by absorbing other beards."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:26:03.672Z NOISE heartbeat JOKE="Chuck Norris once went to the Virgin Islands. Now they are just called The Islands"
+2025-08-13T22:26:13.336Z NOISE heartbeat JOKE="Chuck Norris visited Atlantis once. After the people pissed him off, he vowed revenge. End of story."
+2025-08-13T22:26:23.308Z NOISE heartbeat JOKE="Chuck Norris can drive a pop-up camper."
+2025-08-13T22:26:33.685Z NOISE heartbeat JOKE="Chuck Norris can roundhouse kick you in such a way that you become incapable of dying, and just do a little worse every day."
+2025-08-13T22:26:43.307Z NOISE heartbeat JOKE="As a child, Chuck Norris used to engoy making shapes in sandboxes. we call them pyramids"
+2025-08-13T22:26:53.715Z NOISE heartbeat JOKE="Chuck Norris is a bulldozer with a beard."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:27:03.748Z NOISE heartbeat JOKE="Chuck Norris' treehouse has a basement."
+2025-08-13T22:27:13.784Z NOISE heartbeat JOKE="Cars were invented to have a faster way of fleeing from Chuck Norris. Not to be outdone, Chuck Norris invented the car accident."
+2025-08-13T22:27:23.709Z NOISE heartbeat JOKE="Chuck Norris' left buttocks can bench press 537 pounds while his right buttocks picks his nose."
+2025-08-13T22:27:33.683Z NOISE heartbeat JOKE="This little piggy went to the market,this little piggy stayed home,this little piggy went we we we all the way home because Chuck Norris delivered a fatal roundhouse kick to the other piggy."
+2025-08-13T22:27:43.682Z NOISE heartbeat JOKE="Chuck Norris threw a grenade that killed 100 people it then exploded"
+2025-08-13T22:27:53.685Z NOISE heartbeat JOKE="Chuck Norris once ate an entire wildebeest with a broken KFC spork."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:28:03.628Z POST /login FAKE_HASH=ab0785ceab1fde5fff9f6397d9e54a3839076b39cc24dfe2022e1145209c3e4e JOKE="Chuck Norris can exhale a huge plume of cigar smoke at any time."
+2025-08-13T22:28:03.696Z NOISE heartbeat JOKE="When Chuck Norris gets an erection, the street lights dim."
+2025-08-13T22:28:13.727Z NOISE heartbeat JOKE="You are always told to turn off your cell phone during a flight, in case Chuck Norris calls you and whispers the secret incantation to make you spontaneously combust."
+2025-08-13T22:28:23.703Z NOISE heartbeat JOKE="Chuck Norris can kick a fart back into an ass."
+2025-08-13T22:28:33.652Z NOISE heartbeat JOKE="The Mona Lisa didn't smile before Chuck Norris spent a night in the Louvre."
+2025-08-13T22:28:43.792Z NOISE heartbeat JOKE="Chuck Norris' favorite video is the tape from the movie "the ring" Ironically, if you watch the movie "sidekicks", and dont like it, Chuck Norris will roundhouse kick you and when they find your corps"
+2025-08-13T22:28:53.708Z NOISE heartbeat JOKE="Chuck Norris' drinking habit has gotten to the point where he regularly eats several six-packs while waiting for the truckers to unload the kegs."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:29:03.762Z NOISE heartbeat JOKE="How much wood would a woodchuck chuck if a woodchuck could chuck wood? As much wood as Chuck Norris wants it to."
+2025-08-13T22:29:13.798Z NOISE heartbeat JOKE="when we add 9+1, we get 10. when Chuck Norris adds 9+1, a thunderbolt strikes down the nearest person watching him."
+2025-08-13T22:29:23.727Z NOISE heartbeat JOKE="Like this to get an instant download of Chuck Norris's Walker Texas Ranger theme song as ur Ringtone!"
+2025-08-13T22:29:33.724Z NOISE heartbeat JOKE="Chuck Norris won an Oscar for his appearance in a television commercial."
+2025-08-13T22:29:43.747Z NOISE heartbeat JOKE="The great wall of china was made as a stand for Chuck Norris's penis as Chuck Norris couldn't hold it up him self. Just kidding, he just wasn't bothered. And he HAS been alive that long."
+2025-08-13T22:29:53.835Z NOISE heartbeat JOKE="When you ask Chuck Norris a question, you'd better be ready to have an answer shoved all the way up your dick hole"
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:30:03.706Z NOISE heartbeat JOKE="Despite millions of fan letters, Chuck Norris regretfully says that his schedule is simply too full to kill Nickelback anytime soon."
+2025-08-13T22:30:13.717Z NOISE heartbeat JOKE="When Chuck Norris was asked if he believed that the world was going to end in 2012 he resonded: "Depends how I'm feeling that day.""
+2025-08-13T22:30:23.840Z NOISE heartbeat JOKE="CHUCK NORRIS IS YOUR FATHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+2025-08-13T22:30:33.879Z NOISE heartbeat JOKE="Some people like to eat frogs' legs. Chuck Norris likes to eat lizard legs. Hence, snakes."
+2025-08-13T22:30:43.716Z NOISE heartbeat JOKE="The original title for Alien vs Predator used to be called Alien vs Chuck Norris. But no one wanted to pay $7.50 for a 10 second movie"
+2025-08-13T22:30:53.332Z NOISE heartbeat JOKE="Chuck Norris doesn't read books. He stares them down until he gets the information he wants."
+LOGIN email=admin@example.com userFound=true hash=qch3/y[^gch:_r[gjf_(]igzU3BRQ2juu9sXgWarALi ok=true
+2025-08-13T22:31:03.775Z NOISE heartbeat JOKE="The REAL reason why Hitler killed himself was because he found out that Chuck Norris is Jewish."
+2025-08-13T22:31:13.709Z NOISE heartbeat JOKE="Instead of the holy trinity, it should be The Holy Quadrinity: the father, the son, the holy ghost, and A Chuck Norris Testicle Hair."

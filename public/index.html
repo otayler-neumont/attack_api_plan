@@ -31,6 +31,10 @@
                         <label for="password">Password</label>
                         <input id="password" name="password" type="password" placeholder="hunter2" required />
                     </div>
+                    <div class="field-row-stacked hidden">
+                        <label for="preview">Hash Preview (insecure)</label>
+                        <input id="preview" name="preview" type="text" readonly />
+                    </div>
                     <div class="field-row">
                         <input type="checkbox" id="showPw" />
                         <label for="showPw">Show password</label>
@@ -65,6 +69,7 @@
                 <div class="window-body">
                     <ul class="menu">
                         <li><button id="openLogs">View Logs</button></li>
+                        <li><button id="openAdmin">Admin Panel</button></li>
                         <li><button id="playBoot">Play Boot Sound</button></li>
                         <li><label class="mute"><input type="checkbox" id="muteSounds" /> Mute Sounds</label></li>
                     </ul>
@@ -97,6 +102,55 @@
                 </select>
             </div>
             <pre id="logsContent" class="response-body" style="height: 220px;"></pre>
+        </div>
+    </div>
+
+    <!-- Admin Panel Window -->
+    <div id="adminWindow" class="window window-floating hidden" data-draggable="true" role="dialog"
+        aria-labelledby="adminTitle" style="top: 160px; left: 360px; width: 560px;">
+        <div class="title-bar">
+            <div class="title-bar-text" id="adminTitle">Admin Panel (Insecure)</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize" id="minAdmin"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" id="closeAdmin"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <fieldset>
+                <legend>Admin Login</legend>
+                <div class="field-row-stacked">
+                    <label for="adminLoginEmail">Email</label>
+                    <input id="adminLoginEmail" type="email" value="admin@example.com" />
+                </div>
+                <div class="field-row-stacked">
+                    <label for="adminLoginPw">Password</label>
+                    <input id="adminLoginPw" type="password" placeholder="password" />
+                </div>
+                <div class="field-row" style="gap:8px;">
+                    <button id="adminLoginBtn">Log In as Admin</button>
+                    <label class="mute" style="margin-left:8px;"><input type="checkbox" id="adminMode" /> Remember Admin
+                        Mode</label>
+                </div>
+                <div class="status-bar" style="margin-top:6px;">
+                    <p class="status-bar-field" id="adminStatus">Idle</p>
+                </div>
+            </fieldset>
+            <fieldset style="margin-top:8px;">
+                <legend>Users</legend>
+                <div class="field-row" style="gap:8px;">
+                    <button id="loadUsers">Load Users</button>
+                    <button id="refreshUsers">Refresh</button>
+                </div>
+                <pre id="usersList" class="response-body" style="height:160px;"></pre>
+            </fieldset>
+            <fieldset style="margin-top:8px;">
+                <legend>API Docs</legend>
+                <div class="field-row" style="gap:8px;">
+                    <button id="loadDocs">Load Docs</button>
+                </div>
+                <pre id="apiDocs" class="response-body" style="height:140px;"></pre>
+            </fieldset>
         </div>
     </div>
 

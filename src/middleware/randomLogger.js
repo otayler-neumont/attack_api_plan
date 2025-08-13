@@ -48,6 +48,8 @@ function randomLoggerMiddleware(req, _res, next) {
 
 module.exports = {
   randomLoggerMiddleware,
+  appendLog,
+  fetchChuckNorrisJoke,
 };
 
 
