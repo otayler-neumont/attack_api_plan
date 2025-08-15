@@ -5,6 +5,7 @@
   const showPw = document.getElementById('showPw');
   const loginBtn = document.getElementById('loginBtn');
   const registerBtn = document.getElementById('registerBtn');
+  const resetBtn = document.getElementById('resetBtn');
   const statusField = document.getElementById('statusField');
   const statusCode = document.getElementById('statusCode');
   const responseBody = document.getElementById('responseBody');
@@ -13,6 +14,7 @@
   const startMenu = document.getElementById('startMenu');
   const openLogs = document.getElementById('openLogs');
   const openAdmin = document.getElementById('openAdmin');
+  const openReset = document.getElementById('openReset');
   const playBoot = document.getElementById('playBoot');
   const muteToggle = document.getElementById('muteSounds');
   const logsWindow = document.getElementById('logsWindow');
@@ -22,6 +24,24 @@
   const refreshLogs = document.getElementById('refreshLogs');
   const logCount = document.getElementById('logCount');
   const clockEl = document.getElementById('clock');
+
+  // Password Reset Elements
+  const resetWindow = document.getElementById('resetWindow');
+  const closeReset = document.getElementById('closeReset');
+  const minReset = document.getElementById('minReset');
+  const resetRequestForm = document.getElementById('resetRequestForm');
+  const resetEmail = document.getElementById('resetEmail');
+  const requestResetBtn = document.getElementById('requestResetBtn');
+  const debugTokensBtn = document.getElementById('debugTokensBtn');
+  const resetRequestStatus = document.getElementById('resetRequestStatus');
+  const resetPasswordForm = document.getElementById('resetPasswordForm');
+  const resetToken = document.getElementById('resetToken');
+  const newPassword = document.getElementById('newPassword');
+  const doResetBtn = document.getElementById('doResetBtn');
+  const checkTokenBtn = document.getElementById('checkTokenBtn');
+  const resetPasswordStatus = document.getElementById('resetPasswordStatus');
+  const resetDebugInfo = document.getElementById('resetDebugInfo');
+
   // Admin elements
   const adminWindow = document.getElementById('adminWindow');
   const closeAdmin = document.getElementById('closeAdmin');
@@ -37,6 +57,7 @@
   const apiDocs = document.getElementById('apiDocs');
   const adminStatus = document.getElementById('adminStatus');
   let adminLoggedIn = sessionStorage.getItem('adminLoggedIn') === '1';
+  
   function updateAdminUiState() {
     const needsLogin = !adminLoggedIn;
     [loadUsers, refreshUsers, loadDocs].forEach((btn) => { if (btn) btn.disabled = needsLogin; });
@@ -71,7 +92,7 @@
   }
 
   function disableForm(disabled) {
-    [emailInput, passwordInput, loginBtn, registerBtn].forEach((el) => {
+    [emailInput, passwordInput, loginBtn, registerBtn, resetBtn].forEach((el) => {
       el.disabled = disabled;
     });
   }
@@ -117,6 +138,14 @@
     }
   });
 
+  // Password Reset Button
+  resetBtn.addEventListener('click', () => {
+    showResetWindow();
+    if (emailInput.value.trim()) {
+      resetEmail.value = emailInput.value.trim();
+    }
+  });
+
   showPw.addEventListener('change', () => {
     passwordInput.type = showPw.checked ? 'text' : 'password';
   });
@@ -132,6 +161,148 @@
     const withinStart = e.target === startBtn || startBtn?.contains(e.target);
     const withinMenu = e.target === startMenu || startMenu?.contains(e.target);
     if (!withinStart && !withinMenu) startMenu?.classList.add('hidden');
+  });
+
+  // Password Reset Window Functions
+  function showResetWindow() {
+    resetWindow?.classList.remove('hidden');
+    startMenu?.classList.add('hidden');
+    bringToFront(resetWindow);
+  }
+
+  function hideResetWindow() {
+    resetWindow?.classList.add('hidden');
+  }
+
+  // Password Reset Event Listeners
+  openReset?.addEventListener('click', showResetWindow);
+  closeReset?.addEventListener('click', hideResetWindow);
+  minReset?.addEventListener('click', hideResetWindow);
+
+  // Reset Request Form
+  resetRequestForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = resetEmail.value.trim();
+    if (!email) {
+      resetRequestStatus.textContent = 'Email is required';
+      return;
+    }
+
+    resetRequestStatus.textContent = 'Sending reset request...';
+    requestResetBtn.disabled = true;
+
+    try {
+      const { res, data } = await postJson('/request-reset', { email });
+      resetRequestStatus.textContent = res.ok ? 'Reset request sent' : `Failed: ${data.message}`;
+      
+      // Vulnerability: Show debug token if returned
+      if (data.debug_token) {
+        resetToken.value = data.debug_token;
+        resetDebugInfo.textContent = `DEBUG TOKEN LEAKED: ${data.debug_token}\nThis is a development environment vulnerability!`;
+        notify('Debug token auto-filled!');
+      }
+      
+      resetDebugInfo.textContent += `\nResponse: ${JSON.stringify(data, null, 2)}`;
+    } catch (err) {
+      resetRequestStatus.textContent = `Error: ${err.message}`;
+      resetDebugInfo.textContent = `Error: ${err.message}`;
+    } finally {
+      requestResetBtn.disabled = false;
+    }
+  });
+
+  // Debug Tokens Button
+  debugTokensBtn?.addEventListener('click', async () => {
+    resetRequestStatus.textContent = 'Loading debug tokens...';
+    try {
+      const { res, data } = await getJson('/debug/tokens');
+      if (res.ok) {
+        resetDebugInfo.textContent = JSON.stringify(data, null, 2);
+        resetRequestStatus.textContent = `Found ${data.count} active tokens`;
+        
+        // Auto-fill first valid token if available
+        if (data.activeTokens && data.activeTokens.length > 0) {
+          const firstToken = data.activeTokens.find(t => !t.expired);
+          if (firstToken) {
+            resetToken.value = firstToken.token;
+            resetEmail.value = firstToken.email;
+            notify('Token auto-filled from debug endpoint!');
+          }
+        }
+      } else {
+        resetDebugInfo.textContent = `Debug endpoint failed: ${JSON.stringify(data, null, 2)}`;
+        resetRequestStatus.textContent = 'Debug endpoint failed';
+      }
+    } catch (err) {
+      resetDebugInfo.textContent = `Error: ${err.message}`;
+      resetRequestStatus.textContent = `Error: ${err.message}`;
+    }
+  });
+
+  // Reset Password Form
+  resetPasswordForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = resetEmail.value.trim();
+    const token = resetToken.value.trim();
+    const password = newPassword.value;
+
+    if (!email || !token || !password) {
+      resetPasswordStatus.textContent = 'All fields are required';
+      return;
+    }
+
+    resetPasswordStatus.textContent = 'Resetting password...';
+    doResetBtn.disabled = true;
+
+    try {
+      const { res, data } = await postJson('/reset-password', { email, token, newPassword: password });
+      resetPasswordStatus.textContent = res.ok ? 'Password reset successful!' : `Failed: ${data.message}`;
+      
+      if (res.ok) {
+        // Clear form on success
+        resetToken.value = '';
+        newPassword.value = '';
+        resetDebugInfo.textContent = 'Password reset successful! You can now log in with your new password.';
+        notify('Password reset successful!');
+        
+        // Auto-fill main form
+        emailInput.value = email;
+        passwordInput.value = password;
+      } else {
+        resetDebugInfo.textContent = `Reset failed: ${JSON.stringify(data, null, 2)}`;
+      }
+    } catch (err) {
+      resetPasswordStatus.textContent = `Error: ${err.message}`;
+      resetDebugInfo.textContent = `Error: ${err.message}`;
+    } finally {
+      doResetBtn.disabled = false;
+    }
+  });
+
+  // Check Token Button
+  checkTokenBtn?.addEventListener('click', async () => {
+    const email = resetEmail.value.trim();
+    const token = resetToken.value.trim();
+
+    if (!email || !token) {
+      resetPasswordStatus.textContent = 'Email and token required for check';
+      return;
+    }
+
+    resetPasswordStatus.textContent = 'Checking token...';
+
+    try {
+      const { res, data } = await getJson(`/check-token/${encodeURIComponent(email)}/${encodeURIComponent(token)}`);
+      resetPasswordStatus.textContent = data.valid ? 'Token is valid!' : `Token invalid: ${data.reason}`;
+      resetDebugInfo.textContent = `Token check result: ${JSON.stringify(data, null, 2)}`;
+      
+      if (data.valid) {
+        notify('Token is valid!');
+      }
+    } catch (err) {
+      resetPasswordStatus.textContent = `Check failed: ${err.message}`;
+      resetDebugInfo.textContent = `Error: ${err.message}`;
+    }
   });
 
   // Logs window
@@ -350,13 +521,13 @@
     }
 
     titleBar.addEventListener('mousedown', onMouseDown);
-    winEl.addEventListener('mousedown', bringToFront);
+    winEl.addEventListener('mousedown', () => bringToFront(winEl));
   }
 
+  // Make all windows draggable
   makeDraggable(document.querySelector('.auth-window'));
   makeDraggable(document.getElementById('logsWindow'));
   makeDraggable(document.getElementById('adminWindow'));
+  makeDraggable(document.getElementById('resetWindow'));
   updateAdminUiState();
 })();
-
-

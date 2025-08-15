@@ -42,6 +42,7 @@
                     <div class="field-row buttons">
                         <button type="submit" id="loginBtn" class="button primary">Log In</button>
                         <button type="button" id="registerBtn" class="button">Register</button>
+                        <button type="button" id="resetBtn" class="button">Reset Password</button>
                         <button type="reset" class="button">Clear</button>
                     </div>
                 </form>
@@ -53,6 +54,64 @@
                     <pre id="responseBody" class="response-body"></pre>
                 </section>
             </div>
+        </div>
+    </div>
+
+    <!-- Password Reset Window -->
+    <div id="resetWindow" class="window window-floating hidden" data-draggable="true" role="dialog"
+        aria-labelledby="resetTitle" style="top: 120px; left: 120px; width: 500px;">
+        <div class="title-bar">
+            <div class="title-bar-text" id="resetTitle">Password Reset (Insecure)</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize" id="minReset"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" id="closeReset"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <fieldset>
+                <legend>Step 1: Request Reset Token</legend>
+                <form id="resetRequestForm">
+                    <div class="field-row-stacked">
+                        <label for="resetEmail">Email Address</label>
+                        <input id="resetEmail" type="email" placeholder="user@example.com" required />
+                    </div>
+                    <div class="field-row">
+                        <button type="submit" id="requestResetBtn">Send Reset Token</button>
+                        <button type="button" id="debugTokensBtn" style="margin-left: 8px;">View Debug Tokens</button>
+                    </div>
+                </form>
+                <div class="status-bar" style="margin-top: 6px;">
+                    <p class="status-bar-field" id="resetRequestStatus">Enter email to request reset</p>
+                </div>
+            </fieldset>
+
+            <fieldset style="margin-top: 8px;">
+                <legend>Step 2: Reset Password</legend>
+                <form id="resetPasswordForm">
+                    <div class="field-row-stacked">
+                        <label for="resetToken">Reset Token</label>
+                        <input id="resetToken" type="text" placeholder="Token from logs or debug endpoint" required />
+                    </div>
+                    <div class="field-row-stacked">
+                        <label for="newPassword">New Password</label>
+                        <input id="newPassword" type="password" placeholder="New password" required />
+                    </div>
+                    <div class="field-row">
+                        <button type="submit" id="doResetBtn">Reset Password</button>
+                        <button type="button" id="checkTokenBtn" style="margin-left: 8px;">Check Token</button>
+                    </div>
+                </form>
+                <div class="status-bar" style="margin-top: 6px;">
+                    <p class="status-bar-field" id="resetPasswordStatus">Enter token and new password</p>
+                </div>
+            </fieldset>
+
+            <fieldset style="margin-top: 8px;">
+                <legend>Debug Information</legend>
+                <pre id="resetDebugInfo" class="response-body" style="height: 120px; font-size: 11px;">Click "View Debug Tokens" to see active reset tokens.
+This is intentionally insecure for demonstration purposes.</pre>
+            </fieldset>
         </div>
     </div>
 
@@ -70,6 +129,7 @@
                     <ul class="menu">
                         <li><button id="openLogs">View Logs</button></li>
                         <li><button id="openAdmin">Admin Panel</button></li>
+                        <li><button id="openReset">Password Reset</button></li>
                         <li><button id="playBoot">Play Boot Sound</button></li>
                         <li><label class="mute"><input type="checkbox" id="muteSounds" /> Mute Sounds</label></li>
                     </ul>

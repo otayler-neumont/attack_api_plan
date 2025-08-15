@@ -38,6 +38,19 @@ async function addUser(user) {
   await writeAllUsers(users);
   return user;
 }
+async function updateUserPassword(email, newPasswordHash) {
+  const users = await readAllUsers();
+  const userIndex = users.findIndex(u => u.email === email);
+    
+  if (userIndex === -1) {
+    throw new Error('User not found');
+  }
+    
+  users[userIndex].passwordHash = newPasswordHash;
+  await writeAllUsers(users);
+    
+  return users[userIndex];
+}
 
 module.exports = {
   ensureUsersDataFile,
@@ -45,6 +58,7 @@ module.exports = {
   writeAllUsers,
   findByEmail,
   addUser,
+  updateUserPassword,
 };
 
 
